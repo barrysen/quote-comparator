@@ -1,0 +1,48 @@
+{
+  "source_file": "恒力工贸.pdf",
+  "supplier_name_contains": "恒力工贸有限公司",
+  "lines": [
+    {
+      "item_name": "内六角螺钉",
+      "spec_contains": "M8*20",
+      "quantity": 5000,
+      "unit_price": 0.052
+    },
+    {
+      "item_name": "深沟球轴承",
+      "spec_contains": "6204",
+      "quantity": 50,
+      "unit_price": 8.8
+    },
+    {
+      "item_name": "球阀",
+      "spec_contains": "304不锈钢",
+      "quantity": 10,
+      "unit_price": 48
+    },
+    {
+      "item_name": "工业吸尘器滤芯",
+      "spec_contains": "适配XX-2000",
+      "quantity": 4,
+      "unit_price": 66
+    },
+    {
+      "item_name": "三相异步电机",
+      "spec_contains": "1.5kW",
+      "quantity": 2,
+      "unit_price": 1260
+    },
+    {
+      "item_name": "聚氨酯同步带",
+      "spec_contains": "8M-720",
+      "quantity": 10,
+      "unit_price": 40
+    },
+    {
+      "item_name": "接近开关",
+      "spec_contains": "M12",
+      "quantity": 20,
+      "unit_price": 27
+    }
+  ]
+}

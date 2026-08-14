@@ -1,0 +1,5 @@
+# e2e 测试专用配置：走离线回放，不依赖网络与 API Key。
+# 相对路径相对于运行目录（pytest 在项目根目录运行）。
+llm:
+  replay_dir: "tests/fixtures/replay"
+intermediates_dir: "output/test_intermediates"

@@ -1,0 +1,4 @@
+{
+  "source_file": "(物料对齐)",
+  "response": "{\"results\": [{\"id\": \"0\", \"same\": true, \"confidence\": \"high\", \"reason\": \"共享关键词\"}, {\"id\": \"1\", \"same\": true, \"confidence\": \"high\", \"reason\": \"共享关键词\"}, {\"id\": \"2\", \"same\": true, \"confidence\": \"high\", \"reason\": \"共享关键词\"}, {\"id\": \"3\", \"same\": true, \"confidence\": \"high\", \"reason\": \"共享关键词\"}, {\"id\": \"4\", \"same\": true, \"confidence\": \"high\", \"reason\": \"共享关键词\"}, {\"id\": \"5\", \"same\": true, \"confidence\": \"high\", \"reason\": \"共享关键词\"}, {\"id\": \"6\", \"same\": true, \"confidence\": \"high\", \"reason\": \"共享关键词\"}]}"
+}

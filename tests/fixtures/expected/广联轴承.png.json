@@ -1,0 +1,54 @@
+{
+  "source_file": "广联轴承.png",
+  "supplier_name_contains": "广联轴承销售部",
+  "lines": [
+    {
+      "item_name": "内六角螺钉",
+      "spec_contains": "M8",
+      "quantity": 5000,
+      "unit_price": 0.049
+    },
+    {
+      "item_name": "深沟球轴承",
+      "spec_contains": "62",
+      "quantity": 50,
+      "unit_price": 8.0
+    },
+    {
+      "item_name": "球阀",
+      "spec_contains": "30",
+      "quantity": 10,
+      "unit_price": 44
+    },
+    {
+      "item_name": "工业吸尘器滤芯",
+      "spec_contains": "适配",
+      "quantity": 4,
+      "unit_price": 72
+    },
+    {
+      "item_name": "三相异步电机",
+      "spec_contains": "1.",
+      "quantity": 2,
+      "unit_price": 1240
+    },
+    {
+      "item_name": "聚氨酯同步带",
+      "spec_contains": "8M",
+      "quantity": 10,
+      "unit_price": 37
+    },
+    {
+      "item_name": "气缸",
+      "spec_contains": "SC",
+      "quantity": 4,
+      "unit_price": 160
+    },
+    {
+      "item_name": "接近开关",
+      "spec_contains": "M1",
+      "quantity": 20,
+      "unit_price": 24
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "source_file": "鑫源自动化.pdf",
+  "supplier_name_contains": "鑫源自动化科技有限公司",
+  "lines": [
+    {
+      "item_name": "内六角螺钉",
+      "spec_contains": "M8",
+      "quantity": 5000,
+      "unit_price": 0.051
+    },
+    {
+      "item_name": "深沟球轴承",
+      "spec_contains": "62",
+      "quantity": 50,
+      "unit_price": 9.0
+    },
+    {
+      "item_name": "球阀",
+      "spec_contains": "30",
+      "quantity": 10,
+      "unit_price": 47
+    },
+    {
+      "item_name": "工业吸尘器滤芯",
+      "spec_contains": "适配",
+      "quantity": 4,
+      "unit_price": 70
+    },
+    {
+      "item_name": "三相异步电机",
+      "spec_contains": "1.",
+      "quantity": 2,
+      "unit_price": 1300
+    },
+    {
+      "item_name": "聚氨酯同步带",
+      "spec_contains": "8M",
+      "quantity": 10,
+      "unit_price": 41
+    },
+    {
+      "item_name": "气缸",
+      "spec_contains": "SC",
+      "quantity": 4,
+      "unit_price": 165
+    },
+    {
+      "item_name": "接近开关",
+      "spec_contains": "M1",
+      "quantity": 20,
+      "unit_price": 26.5
+    }
+  ]
+}

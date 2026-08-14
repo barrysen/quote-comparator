@@ -1,0 +1,4 @@
+{
+  "source_file": "华东机电-补充.txt",
+  "response": "{\"supplier_name\": \"华东机电设备有限公司\", \"lines\": [{\"item_name\": \"工业吸尘器滤芯\", \"spec\": \"适配XX-2000型\", \"quantity_raw\": \"4个\", \"unit\": \"个\", \"unit_price_raw\": \"62元/个\", \"amount_raw\": \"\", \"currency\": \"CNY\", \"tax_included\": null, \"lead_time_raw\": \"10天\", \"payment_terms\": \"\", \"remark\": \"\", \"confidence\": \"high\", \"source_snippet\": \"1、工业吸尘器滤芯 适配XX-2000型，单价62元/个，数量4个，交期10天\"}, {\"item_name\": \"接近开关\", \"spec\": \"M12 NPN 常开\", \"quantity_raw\": \"20个\", \"unit\": \"个\", \"unit_price_raw\": \"25.5元/个\", \"amount_raw\": \"\", \"currency\": \"CNY\", \"tax_included\": null, \"lead_time_raw\": \"现货\", \"payment_terms\": \"\", \"remark\": \"\", \"confidence\": \"high\", \"source_snippet\": \"2、接近开关 M12 NPN 常开，单价25.5元/个，数量20个，现货\"}]}"
+}

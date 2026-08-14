@@ -1,0 +1,37 @@
+[project]
+name = "quote-comparator"
+version = "0.1.0"
+description = "报价单提取比价工具：多格式报价文件 → 统一结构化数据 → 横向比价 Excel"
+requires-python = ">=3.11"
+dependencies = [
+    "openpyxl>=3.1",
+    "xlrd>=2.0",
+    "pdfplumber>=0.11",
+    "pypdfium2>=4.0",
+    "opencv-python>=4.8",
+    "pillow>=10.0",
+    "reportlab>=4.0",
+    "pydantic>=2.5",
+    "pyyaml>=6.0",
+    "chardet>=5.0",
+    "openai>=1.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "httpx>=0.27"]
+# Web UI 后端（src/web/app.py）
+web = ["fastapi>=0.115", "uvicorn[standard]>=0.30", "python-multipart>=0.0.9"]
+# OCR 引擎二选一（ocr.engine=auto 时 paddle 优先、rapid 降级）：
+# paddle = ["paddlepaddle>=2.6", "paddleocr>=2.7"]
+ocr = ["rapidocr-onnxruntime>=1.4"]  # 轻量默认项（PP-OCR 模型家族，ONNX 推理）
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["src", "src.pipeline", "src.llm", "src.web"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

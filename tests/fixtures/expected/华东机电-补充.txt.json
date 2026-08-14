@@ -1,0 +1,18 @@
+{
+  "source_file": "华东机电-补充.txt",
+  "supplier_name_contains": "华东机电",
+  "lines": [
+    {
+      "item_name": "工业吸尘器滤芯",
+      "spec_contains": "XX-2000",
+      "quantity": 4,
+      "unit_price": 62
+    },
+    {
+      "item_name": "接近开关",
+      "spec_contains": "M12",
+      "quantity": 20,
+      "unit_price": 25.5
+    }
+  ]
+}

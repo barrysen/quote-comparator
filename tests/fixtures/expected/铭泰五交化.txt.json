@@ -1,0 +1,54 @@
+{
+  "source_file": "铭泰五交化.txt",
+  "supplier_name_contains": "铭泰五交化",
+  "lines": [
+    {
+      "item_name": "内六角螺钉",
+      "spec_contains": "M8",
+      "quantity": 5000,
+      "unit_price": 0.048
+    },
+    {
+      "item_name": "6204轴承",
+      "spec_contains": "",
+      "quantity": null,
+      "unit_price": 8.2
+    },
+    {
+      "item_name": "304不锈钢球阀",
+      "spec_contains": "DN15",
+      "quantity": null,
+      "unit_price": 45
+    },
+    {
+      "item_name": "吸尘器滤芯",
+      "spec_contains": "XX-2000",
+      "quantity": null,
+      "unit_price": 68
+    },
+    {
+      "item_name": "电机",
+      "spec_contains": "1.5",
+      "quantity": null,
+      "unit_price": 1250
+    },
+    {
+      "item_name": "同步带",
+      "spec_contains": "8M-720",
+      "quantity": null,
+      "unit_price": 38
+    },
+    {
+      "item_name": "气缸",
+      "spec_contains": "SC63",
+      "quantity": null,
+      "unit_price": 165
+    },
+    {
+      "item_name": "接近开关",
+      "spec_contains": "M12",
+      "quantity": null,
+      "unit_price": 25
+    }
+  ]
+}

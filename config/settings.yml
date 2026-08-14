@@ -1,0 +1,31 @@
+# 报价单提取比价工具 · 主配置
+# 所有相对路径相对于运行命令时所在的目录（通常为项目根目录）。
+
+llm:
+  # OpenAI 兼容端点，一键切换：DeepSeek API / 本地 vLLM / 其他兼容服务
+  base_url: "https://api.deepseek.com/v1"
+  api_key_env: "DEEPSEEK_API_KEY"   # API Key 从该环境变量读取，不写进配置文件
+  model: "deepseek-chat"
+  temperature: 0                    # 防幻觉：固定 0
+  timeout: 60                       # 秒
+  max_retries: 3                    # 指数退避重试次数
+  retry_delay: 1.0                  # 重试基础间隔（秒），实际间隔 = retry_delay * 2^attempt
+  structured_mode: "json_schema"    # json_schema | json_object（端点不支持 schema 时降级）
+  context_chars: 60000              # 估算上下文字符数，raw_text 超过 80% 时切块
+  replay_dir: null                  # 离线回放目录（测试/演示用），置空则走真实 API
+
+ocr:
+  engine: "auto"                    # auto（paddle 优先，rapid 降级）| paddle | rapid
+  dpi: 300
+  min_char_confidence: 0.85         # OCR 行置信度阈值，低于此值记入 low_ocr_lines
+
+compare:
+  price_deviation_threshold: 0.15   # 高于均价 15% 标红
+  amount_tolerance: 0.02            # V3 金额核对容差 ±2%
+  lead_time_factor: 2.0             # 交期超过中位数 2 倍标橙
+
+intermediates_dir: "intermediates"  # 中间产物缓存（断点续跑）
+units_file: "config/units.yml"
+prompts:
+  parse_quote: "config/prompts/parse_quote.md"
+  match_items: "config/prompts/match_items.md"
