@@ -89,3 +89,17 @@ export interface Health {
   llm_key_env: string;
   demo_available: boolean;
 }
+
+export interface ModelProfile {
+  name: string;
+  label: string;
+  base_url: string;
+  model: string;
+  api_key_env: string;
+  key_configured: boolean;
+}
+
+export interface ModelsResponse {
+  active: string;
+  profiles: ModelProfile[];
+}

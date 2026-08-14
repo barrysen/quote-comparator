@@ -1,0 +1,29 @@
+# 模型档案配置【模板】：复制为 config/models.yml 后使用（models.yml 已被 gitignore，不会进仓库）
+#   cp config/models.example.yml config/models.yml
+#
+# 每个对象 = 一个可用模型，Web 页面上可选择其一用于提取。
+# 字段说明：
+#   name        档案标识（唯一）
+#   label       页面显示名
+#   base_url    OpenAI 兼容端点
+#   model       模型 ID
+#   api_key     API Key 直接写在这里（本机文件，不会提交）
+#               也可以用 api_key_env 指定环境变量名（如 DEEPSEEK_API_KEY），
+#               由 .env 或环境变量提供；api_key 优先于 api_key_env
+# active 为默认使用的档案；页面上选择其他档案仅对当次提取生效。
+
+active: deepseek
+
+profiles:
+  - name: deepseek
+    label: DeepSeek Chat
+    base_url: "https://api.deepseek.com/v1"
+    model: "deepseek-chat"
+    api_key: ""                      # 填入 sk-... 即可用
+
+  # 示例：Kimi（Moonshot）——取消注释并填入 api_key 即可用
+  # - name: kimi
+  #   label: Kimi K2
+  #   base_url: "https://api.moonshot.cn/v1"
+  #   model: "kimi-k2-0905-preview"
+  #   api_key: ""

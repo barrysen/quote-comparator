@@ -53,7 +53,24 @@ def test_demo_job_completes():
         assert len(fr.content) > 100
 
 
-def test_upload_without_key_rejected(monkeypatch):
+def test_upload_without_key_rejected(tmp_path, monkeypatch):
+    import src.web.app as webapp
+
+    # 与本机真实的 config/models.yml 隔离：使用无密钥的档案
+    mf = tmp_path / "models.yml"
+    mf.write_text(
+        """
+active: deepseek
+profiles:
+  - name: deepseek
+    base_url: "https://api.deepseek.com/v1"
+    model: "deepseek-chat"
+    api_key_env: "DEEPSEEK_API_KEY"
+""",
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(webapp, "MODELS_FILE", mf)
+    monkeypatch.setattr(webapp, "MODELS_EXAMPLE", tmp_path / "nonexistent.yml")
     monkeypatch.delenv("DEEPSEEK_API_KEY", raising=False)
     content = "供应商: 测试五金\n螺丝 M6x20 1000 个 0.05 元/个\n".encode("utf-8")
     r = client.post(
@@ -74,3 +91,83 @@ def test_upload_rejects_bad_suffix():
 
 def test_unknown_job_404():
     assert client.get("/api/jobs/nonexistent").status_code == 404
+
+
+# ---------- 模型档案（config/models.yml，只读） ----------
+
+
+def test_models_config(tmp_path, monkeypatch):
+    import src.web.app as webapp
+
+    mf = tmp_path / "models.yml"
+    mf.write_text(
+        """
+active: kimi
+profiles:
+  - name: deepseek
+    label: DeepSeek Chat
+    base_url: "https://api.deepseek.com/v1"
+    model: "deepseek-chat"
+    api_key_env: "DEEPSEEK_API_KEY"
+  - name: kimi
+    label: Kimi K2
+    base_url: "https://api.moonshot.cn/v1"
+    model: "kimi-k2-0905-preview"
+    api_key_env: "MOONSHOT_API_KEY"
+  - name: local
+    base_url: "http://127.0.0.1:9999/v1"
+    model: "local-llm"
+    api_key: "sk-direct-test-key"
+""",
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(webapp, "MODELS_FILE", mf)
+
+    # 列出档案与默认项
+    r = client.get("/api/models")
+    assert r.status_code == 200
+    data = r.json()
+    assert [p["name"] for p in data["profiles"]] == ["deepseek", "kimi", "local"]
+    assert data["active"] == "kimi"
+
+    # 直写 api_key 的档案视为已配置，且响应绝不泄露 Key 本体
+    local = next(p for p in data["profiles"] if p["name"] == "local")
+    assert local["key_configured"] is True
+    assert local["label"] == "local"  # 未填 label 时回退为档案名，页面不会出现空显示
+    assert "sk-direct-test-key" not in r.text
+
+    # 缺密钥时创建真实任务被拒，错误信息带档案名与环境变量名
+    monkeypatch.delenv("MOONSHOT_API_KEY", raising=False)
+    r = client.post(
+        "/api/jobs",
+        data={"model": "kimi"},
+        files=[("files", ("a.txt", b"x", "text/plain"))],
+    )
+    assert r.status_code == 400
+    assert "MOONSHOT_API_KEY" in r.json()["detail"]
+
+    # 直写 api_key 的档案可通过密钥检查、任务被受理
+    r = client.post(
+        "/api/jobs",
+        data={"model": "local"},
+        files=[("files", ("a.txt", b"x", "text/plain"))],
+    )
+    assert r.status_code == 200
+
+    # 未知档案
+    r = client.post(
+        "/api/jobs",
+        data={"model": "ghost"},
+        files=[("files", ("a.txt", b"x", "text/plain"))],
+    )
+    assert r.status_code == 400
+
+
+def test_models_fallback_without_file(tmp_path, monkeypatch):
+    """models.yml 不存在时回退到 models.example.yml / settings.yml。"""
+    import src.web.app as webapp
+
+    monkeypatch.setattr(webapp, "MODELS_FILE", tmp_path / "nonexistent.yml")
+    data = client.get("/api/models").json()
+    assert len(data["profiles"]) >= 1
+    assert data["active"] == data["profiles"][0]["name"]

@@ -1,11 +1,28 @@
-"""配置加载：settings.yml（深合并默认值）+ units.yml（反向映射）。"""
+"""配置加载：settings.yml（深合并默认值）+ units.yml（反向映射）+ .env（本机密钥）。"""
 
 from __future__ import annotations
 
 import copy
+import os
 from pathlib import Path
 
 import yaml
+
+
+def load_dotenv(path: str | Path = ".env") -> None:
+    """极简 .env 加载：KEY=VALUE 逐行写入环境变量（已存在的不覆盖）。
+
+    让 API Key 只存在于本机 .env（gitignore 忽略），CLI 与 Web 共用。
+    """
+    p = Path(path)
+    if not p.exists():
+        return
+    for line in p.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        k, v = line.split("=", 1)
+        os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
 
 DEFAULT_SETTINGS: dict = {
     "llm": {

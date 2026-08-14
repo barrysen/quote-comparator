@@ -3,10 +3,12 @@ import Hero from "../sections/Hero";
 import FeatureIntro from "../sections/FeatureIntro";
 import ExtractPanel from "../sections/ExtractPanel";
 import ResultView from "../sections/ResultView";
-import type { Health, Job } from "../types/api";
+import type { Health, Job, ModelsResponse } from "../types/api";
 
 export default function Home() {
   const [health, setHealth] = useState<Health | null>(null);
+  const [models, setModels] = useState<ModelsResponse | null>(null);
+  const [model, setModel] = useState("");
   const [job, setJob] = useState<Job | null>(null);
   const [log, setLog] = useState("");
   const timerRef = useRef<number | null>(null);
@@ -17,6 +19,18 @@ export default function Home() {
       .then(setHealth)
       .catch(() => setHealth(null));
   }, []);
+
+  const refreshModels = useCallback(() => {
+    fetch("/api/models")
+      .then((r) => r.json())
+      .then((m: ModelsResponse) => {
+        setModels(m);
+        setModel((prev) => prev || m.active);
+      })
+      .catch(() => setModels(null));
+  }, []);
+
+  useEffect(refreshModels, [refreshModels]);
 
   const poll = useCallback((jobId: string) => {
     if (timerRef.current) window.clearInterval(timerRef.current);
@@ -61,9 +75,10 @@ export default function Home() {
   );
 
   const onRunFiles = useCallback(
-    (files: File[]) => {
+    (files: File[], modelName: string) => {
       const fd = new FormData();
       files.forEach((f) => fd.append("files", f));
+      if (modelName) fd.append("model", modelName);
       startJob(fd);
     },
     [startJob]
@@ -81,6 +96,9 @@ export default function Home() {
       <FeatureIntro />
       <ExtractPanel
         health={health}
+        models={models}
+        model={model}
+        onModelChange={setModel}
         running={job === null && log.length > 0 && !log.startsWith("提交失败")}
         log={log}
         onRunFiles={onRunFiles}

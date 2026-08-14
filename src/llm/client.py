@@ -122,6 +122,9 @@ class LLMClient:
     """唯一 LLM 入口。complete_json 自带指数退避重试与 JSON 解析。"""
 
     def __init__(self, config: dict, transport: Optional[Transport] = None):
+        from src.config_loader import load_dotenv
+
+        load_dotenv()  # 本机 .env 中的密钥自动入环境变量
         self.cfg = config["llm"]
         if transport is not None:
             self.transport: Transport = transport

@@ -5,3 +5,5 @@ intermediates/
 output/
 .pytest_cache/
 .idea/
+.env
+config/models.yml

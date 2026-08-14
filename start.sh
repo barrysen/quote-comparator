@@ -16,8 +16,9 @@ if [ ! -d web/node_modules ]; then
   (cd web && npm install --no-audit --no-fund)
 fi
 
-if [ -z "${DEEPSEEK_API_KEY:-}" ]; then
-  echo "提示：未设置 DEEPSEEK_API_KEY，真实文件解析不可用；可先在页面里跑「演示样本」。"
+if [ ! -f config/models.yml ]; then
+  cp config/models.example.yml config/models.yml
+  echo "已生成 config/models.yml（本机文件，不会提交），请在档案的 api_key 字段填入 Key。"
 fi
 
 echo "启动中：前端 + 后端（按 Ctrl+C 停止）"

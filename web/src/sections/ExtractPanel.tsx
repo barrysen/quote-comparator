@@ -1,18 +1,21 @@
 import { useRef, useState } from "react";
 import { Upload, Play, FlaskConical, X, Loader2 } from "lucide-react";
-import type { Health } from "../types/api";
+import type { Health, ModelsResponse } from "../types/api";
 
 interface Props {
   health: Health | null;
+  models: ModelsResponse | null;
+  model: string;
+  onModelChange: (name: string) => void;
   running: boolean;
   log: string;
-  onRunFiles: (files: File[]) => void;
+  onRunFiles: (files: File[], model: string) => void;
   onRunDemo: () => void;
 }
 
 const ACCEPT = ".xlsx,.xls,.pdf,.png,.jpg,.jpeg,.txt,.csv";
 
-export default function ExtractPanel({ health, running, log, onRunFiles, onRunDemo }: Props) {
+export default function ExtractPanel({ health, models, model, onModelChange, running, log, onRunFiles, onRunDemo }: Props) {
   const [files, setFiles] = useState<File[]>([]);
   const [dragOver, setDragOver] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -83,12 +86,28 @@ export default function ExtractPanel({ health, running, log, onRunFiles, onRunDe
             <div className="mt-5 flex flex-wrap items-center gap-3">
               <button
                 disabled={running || files.length === 0}
-                onClick={() => onRunFiles(files)}
+                onClick={() => onRunFiles(files, model)}
                 className="inline-flex items-center gap-2 rounded-md bg-neutral-900 px-5 py-2.5 text-sm font-medium text-white hover:bg-neutral-700 disabled:cursor-not-allowed disabled:opacity-40"
               >
                 {running ? <Loader2 className="h-4 w-4 animate-spin" /> : <Play className="h-4 w-4" />}
                 开始提取（{files.length} 个文件）
               </button>
+              {models && models.profiles.length > 0 && (
+                <label className="flex items-center gap-2 text-xs text-neutral-500">
+                  使用模型
+                  <select
+                    value={model}
+                    onChange={(e) => onModelChange(e.target.value)}
+                    className="rounded-md border border-neutral-300 bg-white px-2 py-2 text-sm text-neutral-700"
+                  >
+                    {models.profiles.map((p) => (
+                      <option key={p.name} value={p.name}>
+                        {p.label}（{p.model}）{p.key_configured ? "" : " · 缺密钥"}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              )}
               {health?.demo_available && (
                 <button
                   disabled={running}
@@ -102,8 +121,8 @@ export default function ExtractPanel({ health, running, log, onRunFiles, onRunDe
             </div>
             {!health?.llm_configured && (
               <p className="mt-3 text-xs leading-5 text-amber-700">
-                提示：未检测到 {health?.llm_key_env ?? "DEEPSEEK_API_KEY"} 环境变量。上传真实文件会因 LLM 解析失败而标黄；
-                想先看完整效果请用「演示样本」（内置 6 份虚拟报价，离线回放，不消耗 API）。
+                提示：当前模型未配置密钥，上传真实文件无法解析。请在 config/models.yml 对应档案中填入
+                api_key（本机文件，不会提交），或先点「跑一份演示样本」看完整效果（离线回放，不消耗 API）。
               </p>
             )}
           </div>

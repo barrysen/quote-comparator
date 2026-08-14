@@ -17,7 +17,7 @@ export default function Hero({ health }: { health: Health | null }) {
               ) : (
                 <>
                   <CircleAlert className="h-3.5 w-3.5 text-amber-600" />
-                  未配置 {health.llm_key_env}，可用演示模式体验
+                  未配置 {health.llm_key_env}，可在 config/models.yml 填 api_key，或先用演示模式体验
                 </>
               )}
             </p>

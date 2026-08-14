@@ -92,8 +92,19 @@ cd web && npm install
 
 ## 配置
 
-`config/settings.yml`：LLM 端点与模型、OCR 参数、比价阈值（偏离 15% / 金额容差 ±2% / 交期 2 倍）等。
-API Key 一律走环境变量（默认 `DEEPSEEK_API_KEY`），不写进配置文件。
+`config/settings.yml`：OCR 参数、比价阈值（偏离 15% / 金额容差 ±2% / 交期 2 倍）、默认 LLM 端点等。
+
+**模型与密钥（Web UI）**：复制模板生成本机配置，然后直接在里面维护模型和 Key：
+
+```bash
+cp config/models.example.yml config/models.yml
+# 编辑 models.yml：每个对象 = 一个模型（base_url / model / api_key），active 为默认项
+```
+
+`config/models.yml` 已被 gitignore，**永远不会进仓库**，Key 可以放心写在档案的 `api_key` 字段里；
+页面上传的「使用模型」下拉框从中读取，可单次换模型提取。
+也支持用 `api_key_env` 指定环境变量名由环境变量 / `.env` 提供（适合 CI 场景），`api_key` 优先。
+CLI 则使用 `settings.yml` 的 `llm` 段（Key 走环境变量或 `.env`）。
 
 ## 测试
 
