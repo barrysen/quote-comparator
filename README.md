@@ -23,13 +23,7 @@
 
 ## 界面截图
 
-![首屏与支持格式](docs/screenshots/01-首屏与格式支持.png)
-
-![六阶段流水线与五色图例](docs/screenshots/02-流水线与标色图例.png)
-
-![演示样本比价矩阵](docs/screenshots/03-演示比价矩阵.png)
-
-![校验发现清单](docs/screenshots/04-校验发现.png)
+![WEBUI演示截图](docs/screenshots/WEBUI演示截图.png)
 
 ## 快速开始
 
