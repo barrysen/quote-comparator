@@ -1,0 +1,210 @@
+version: v2
+theme:
+    colors:
+        accent1: '#4472C4'
+        accent2: '#ED7D31'
+        accent3: '#A5A5A5'
+        accent4: '#FFC000'
+        accent5: '#5B9BD5'
+        accent6: '#70AD47'
+        dk1: '#000000'
+        dk2: '#1F2937'
+        folHlink: '#954F72'
+        hlink: '#0563C1'
+        lt1: '#FFFFFF'
+        lt2: '#F3F4F6'
+    tableStyles:
+        table1:
+            cellStyle:
+                align:
+                    - left
+                    - middle
+            firstColumnStyle:
+                bold: true
+                border:
+                    - null
+                    - null
+                    - color: '#E4E2DA'
+                      style: solid
+                      width: 1
+                    - null
+                color: '#17705F'
+                fontFamily: JetBrains Mono, JetBrains Mono
+                fontSize: 12
+            firstRowStyle:
+                bold: true
+                border:
+                    - null
+                    - null
+                    - color: '#1A1D21'
+                      style: solid
+                      width: 1
+                    - null
+                color: '#6E747C'
+                fontSize: 11
+            rowOverColumn: true
+    textStyles:
+        text1:
+            color: $lt1
+            fontFamily: JetBrains Mono, JetBrains Mono
+            fontSize: 20
+            lineHeight: 1.6
+        text2:
+            color: '#17705F'
+            fontFamily: JetBrains Mono, JetBrains Mono
+            fontSize: 20
+            lineHeight: 1.6
+        text3:
+            color: '#6E747C'
+            fontFamily: JetBrains Mono, JetBrains Mono
+            fontSize: 10
+            lineHeight: 1.6
+        text4:
+            bold: true
+            color: '#17705F'
+            fontFamily: MiSans, MiSans
+            fontSize: 11
+            letterSpacing: 3
+        text5:
+            bold: true
+            color: '#1A1D21'
+            fontFamily: MiSans, MiSans
+            fontSize: 26
+        text6:
+            color: '#6E747C'
+            fontFamily: JetBrains Mono, JetBrains Mono
+            fontSize: 11
+            lineHeight: 1.6
+        text7:
+            color: $dk1
+            fontFamily: JetBrains Mono, JetBrains Mono
+            fontSize: 12
+            lineHeight: 1.6
+        text8:
+            color: '#17705F'
+            fontFamily: JetBrains Mono, JetBrains Mono
+            fontSize: 11
+            lineHeight: 1.6
+        text9:
+            bold: true
+            color: '#1A1D21'
+            fontFamily: MiSans, MiSans
+            fontSize: 15
+        text10:
+            color: '#1A1D21'
+            fontFamily: MiSans, MiSans
+            fontSize: 13
+            lineHeight: 1.7
+        text11:
+            bold: true
+            color: $dk1
+            fontFamily: MiSans, MiSans
+            fontSize: 17
+            lineHeight: 1.5
+        text12:
+            color: '#17705F'
+            fontFamily: JetBrains Mono, JetBrains Mono
+            fontSize: 30
+            lineHeight: 1.6
+        text13:
+            color: '#6E747C'
+            fontFamily: MiSans, MiSans
+            fontSize: 12
+            lineHeight: 1.6
+        text14:
+            color: '#D96C2C'
+            fontFamily: JetBrains Mono, JetBrains Mono
+            fontSize: 13
+            letterSpacing: 3
+            lineHeight: 1.6
+        text15:
+            bold: true
+            color: $lt1
+            fontFamily: MiSans, MiSans
+            fontSize: 40
+        text16:
+            color: '#A6ADB5'
+            fontFamily: MiSans, MiSans
+            fontSize: 15
+        text17:
+            color: '#C9CDD2'
+            fontFamily: JetBrains Mono, JetBrains Mono
+            fontSize: 14
+            lineHeight: 1.6
+        text18:
+            bold: true
+            color: '#1A1D21'
+            fontFamily: MiSans, MiSans
+            fontSize: 13
+            lineHeight: 1.7
+        text19:
+            color: '#D96C2C'
+            fontFamily: JetBrains Mono, JetBrains Mono
+            fontSize: 11
+            lineHeight: 1.6
+        text20:
+            color: '#6E747C'
+            fontFamily: MiSans, MiSans
+            fontSize: 12
+            lineHeight: 1.7
+        text21:
+            color: '#17705F'
+            fontFamily: MiSans, MiSans
+            fontSize: 12
+            lineHeight: 1.6
+        text22:
+            color: '#17705F'
+            fontFamily: JetBrains Mono, JetBrains Mono
+            fontSize: 26
+            lineHeight: 1.6
+        text23:
+            color: $dk1
+            fontFamily: MiSans, MiSans
+            fontSize: 13
+            lineHeight: 1.5
+        text24:
+            color: '#17705F'
+            fontFamily: MiSans, MiSans
+            fontSize: 16
+        text25:
+            color: $dk1
+            fontFamily: MiSans, MiSans
+            lineHeight: 1.5
+        text26:
+            color: $dk1
+            fontFamily: MiSans, MiSans
+            lineHeight: 1.4
+        text27:
+            color: '#D96C2C'
+            fontFamily: JetBrains Mono, JetBrains Mono
+            fontSize: 24
+            lineHeight: 1.6
+        text28:
+            color: '#1A1D21'
+            fontFamily: MiSans, MiSans
+            fontSize: 14
+            lineHeight: 1.6
+size:
+    - 960
+    - 540
+pages:
+    - pages/page-1.page
+    - pages/page-2.page
+    - pages/page-3.page
+    - pages/page-4.page
+    - pages/page-5.page
+    - pages/page-6.page
+    - pages/page-7.page
+    - pages/page-8.page
+    - pages/page-9.page
+    - pages/page-10.page
+    - pages/page-11.page
+    - pages/page-12.page
+    - pages/page-13.page
+    - pages/page-14.page
+    - pages/page-15.page
+    - pages/page-16.page
+    - pages/page-17.page
+    - pages/page-18.page
+    - pages/page-19.page
+    - pages/page-20.page

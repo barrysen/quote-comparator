@@ -32,20 +32,23 @@
 - Python 3.11+ 与 Node.js 20+
 - 一个 OpenAI 兼容的 LLM 端点（DeepSeek / Kimi / 本地 vLLM 等均可）
 
-### 第一步：获取代码
+### 第一步：获取代码（三种方式任选其一）
 
-```bash
-# 方式一：git 克隆（推荐）
-git clone git@github.com:barrysen/quote-comparator.git
-cd quote-comparator
+1. **SSH 克隆**（推荐，需本机已配置 GitHub SSH Key）：
 
-# 方式二：HTTPS 克隆
-git clone https://github.com/barrysen/quote-comparator.git
-cd quote-comparator
-```
+   ```bash
+   git clone git@github.com:barrysen/quote-comparator.git
+   cd quote-comparator
+   ```
 
-也可以在 GitHub 仓库页点 **Code → Download ZIP** 下载解压，
-或到 [Releases](https://github.com/barrysen/quote-comparator/releases) 下载正式版本的源码包。
+2. **HTTPS 克隆**（公开仓库无需登录）：
+
+   ```bash
+   git clone https://github.com/barrysen/quote-comparator.git
+   cd quote-comparator
+   ```
+
+3. **下载压缩包**（不用 git）：在[仓库页](https://github.com/barrysen/quote-comparator)点 **Code → Download ZIP** 解压，或到 [Releases](https://github.com/barrysen/quote-comparator/releases) 下载正式版本源码包后解压进入目录。
 
 ### 第二步：一键启动（Web UI，推荐）
 
@@ -57,6 +60,7 @@ cd quote-comparator
 打开终端提示的地址（默认 http://localhost:3000）：
 
 - 未配置 API Key 也没关系，点「**跑一份演示样本**」即可离线体验完整流程（内置 6 份虚拟报价，不消耗 API）；
+- 仓库自带 `示例报价单/` 目录（6 份虚拟报价、4 家供应商、覆盖 Excel/PDF/扫描件/图片/文本），可直接拖入上传区测试真实解析；
 - 处理真实文件前，在 `config/models.yml` 的档案里填入 Key：
 
 ```yaml

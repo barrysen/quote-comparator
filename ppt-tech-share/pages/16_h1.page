@@ -1,0 +1,158 @@
+background:
+  color: $paper
+  type: solid
+pageType: content
+notes: 核心机制二：H1溯源硬校验与容错承诺
+elements:
+  - bounds: [64, 38, 400, 16]
+    content:
+      style: $kicker
+      text: PART 03 · HOW
+      wrap: false
+    elementId: kicker
+    elementType: text
+  - bounds: [64, 60, 832, 40]
+    content:
+      style: $title
+      text: 机制二：H1 溯源硬校验，靠代码不靠自觉
+      wrap: false
+    elementId: title
+    elementType: text
+  - bounds: [64, 108, 832, 1]
+    elementId: rule
+    elementType: shape
+    fill: {color: $line, type: solid}
+    shapeName: rect
+  - bounds: [64, 132, 200, 18]
+    content:
+      style: $kicker
+      fontSize: 10
+      text: 校验流程 · 代码实现
+      wrap: false
+    elementId: label-flow
+    elementType: text
+  - bounds: [64, 160, 260, 100]
+    elementId: f1
+    elementType: shape
+    fill: {color: $beige, type: solid}
+    shapeName: rect
+  - bounds: [78, 172, 232, 80]
+    content:
+      fontFamily: MiSans, MiSans
+      fontSize: 12
+      color: $ink
+      lineHeight: 1.6
+      align: [left, top]
+      text: |
+        <p><strong>1 · LLM 返回</strong></p>
+        <p style="margin-top:4px"><span style="color:$gray">每行带 source_snippet 原文片段</span></p>
+    elementId: f1-t
+    elementType: text
+  - bounds: [332, 204, 20, 12]
+    elementId: fa1
+    elementType: shape
+    shapeName: triangle
+    rotation: 90
+    fill: {color: $green, type: solid}
+  - bounds: [360, 160, 260, 100]
+    elementId: f2
+    elementType: shape
+    fill: {color: $beige, type: solid}
+    shapeName: rect
+  - bounds: [374, 172, 232, 80]
+    content:
+      fontFamily: MiSans, MiSans
+      fontSize: 12
+      color: $ink
+      lineHeight: 1.6
+      align: [left, top]
+      text: |
+        <p><strong>2 · 代码检查</strong></p>
+        <p style="margin-top:4px"><span style="color:$gray">snippet 是否为 raw_text 子串（归一化空白后）</span></p>
+    elementId: f2-t
+    elementType: text
+  - bounds: [628, 204, 20, 12]
+    elementId: fa2
+    elementType: shape
+    shapeName: triangle
+    rotation: 90
+    fill: {color: $green, type: solid}
+  - bounds: [656, 160, 240, 100]
+    border: {color: $green, style: solid, width: 1}
+    elementId: f3
+    elementType: shape
+    shapeName: rect
+  - bounds: [670, 172, 212, 80]
+    content:
+      fontFamily: MiSans, MiSans
+      fontSize: 12
+      color: $ink
+      lineHeight: 1.6
+      align: [left, top]
+      text: |
+        <p><strong>3 · 找不到即标黄</strong></p>
+        <p style="margin-top:4px"><span style="color:$gray">强制 confidence=low，打上 H1 幻觉嫌疑标记</span></p>
+    elementId: f3-t
+    elementType: text
+  - bounds: [64, 292, 200, 18]
+    content:
+      style: $kicker
+      fontSize: 10
+      text: 准确率口径 · 写进验收
+      wrap: false
+    elementId: label-kpi
+    elementType: text
+  - bounds: [64, 318, 396, 120]
+    border: {color: $green, style: solid, width: 1}
+    elementId: box-kpi
+    elementType: shape
+    shapeName: rect
+  - bounds: [80, 330, 364, 100]
+    content:
+      style: $body
+      fontSize: 12
+      align: [left, top]
+      text: |
+        <p style="font-family:JetBrains Mono">字段准确率 = 1 − (错且未标黄的关键字段 ÷ 关键字段总数)</p>
+        <p style="margin-top:8px"><span style="color:$gray">关键字段提取准确率 ≥ 95%；</span><span style="color:$orange"><strong>"错且未标黄"才算事故。</strong></span></p>
+    elementId: box-kpi-t
+    elementType: text
+  - bounds: [500, 292, 200, 18]
+    content:
+      style: $kicker
+      fontSize: 10
+      text: 对抗性测试
+      wrap: false
+    elementId: label-test
+    elementType: text
+  - bounds: [500, 318, 396, 120]
+    elementId: box-test
+    elementType: shape
+    fill: {color: $beige, type: solid}
+    shapeName: rect
+  - bounds: [516, 330, 364, 100]
+    content:
+      style: $body
+      fontSize: 12
+      align: [left, top]
+      text: |
+        <p>人为构造 LLM 返回<strong>原文中不存在片段</strong>的 mock 响应：</p>
+        <p style="margin-top:8px"><span style="color:$gray">对应行必须被强制标黄 —— 这是验收标准里的一条硬指标，防的就是"防了个寂寞"。</span></p>
+    elementId: box-test-t
+    elementType: text
+  - bounds: [64, 478, 560, 16]
+    content:
+      style: $small
+      text: 技术分享 · 报价单提取比价工具
+      wrap: false
+    elementId: footer
+    elementType: text
+  - bounds: [860, 478, 36, 16]
+    content:
+      style: $mono
+      fontSize: 12
+      align: [right, top]
+      text: '16'
+      wrap: false
+    elementId: page-num
+    elementType: text

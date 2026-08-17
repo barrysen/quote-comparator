@@ -1,0 +1,273 @@
+background:
+    color: '#FCFCFA'
+    type: solid
+elements:
+    - bounds:
+        - 64
+        - 38
+        - 500
+        - 16
+      content:
+        style: $text4
+        text: <p>PART 02 · HOW</p>
+        wrap: false
+      elementId: kicker
+      elementType: text
+    - bounds:
+        - 64
+        - 58
+        - 832
+        - 36
+      content:
+        style: $text5
+        text: <p>改完不算完：对比测试与模型评分</p>
+        wrap: false
+      elementId: title
+      elementType: text
+    - bounds:
+        - 64
+        - 108
+        - 832
+        - 1
+      elementId: rule
+      elementType: shape
+      fill:
+        color: '#E4E2DA'
+        type: solid
+      shapeName: rect
+    - bounds:
+        - 64
+        - 126
+        - 396
+        - 22
+      content:
+        style: $text9
+        text: <p>对比测试：同题并排跑</p>
+        wrap: false
+      elementId: left-title
+      elementType: text
+    - bounds:
+        - 64
+        - 156
+        - 396
+        - 1
+      elementId: left-rule
+      elementType: shape
+      fill:
+        color: '#E4E2DA'
+        type: solid
+      shapeName: rect
+    - bounds:
+        - 64
+        - 172
+        - 396
+        - 200
+      content:
+        align:
+            - left
+            - top
+        style: $text10
+        text: '<p style="text-align: left; line-height: 1.7;">· 同一个测试用例，<strong>原始 Prompt 与优化后 Prompt</strong> 各跑一遍，结果并排展示。</p><p style="text-align: left; line-height: 1.7; margin-top: 8px;">· 支持 <strong>2 / 3 / 4 列</strong>，还可以挂上不同模型同时跑。</p><p style="text-align: left; line-height: 1.7; margin-top: 8px;">· 变量模式下换一组 {{变量}} 值，就能测一类场景而不是一个例子。</p>'
+        wrap: true
+      elementId: left-body
+      elementType: text
+    - bounds:
+        - 64
+        - 396
+        - 396
+        - 1
+      elementId: left-conclusion-rule
+      elementType: shape
+      fill:
+        color: '#E4E2DA'
+        type: solid
+      shapeName: rect
+    - bounds:
+        - 64
+        - 412
+        - 396
+        - 60
+      content:
+        align:
+            - left
+            - top
+        bold: true
+        color: $dk1
+        fontFamily: MiSans, MiSans
+        fontSize: 16
+        lineHeight: 1.5
+        text: '<p style="text-align: left; line-height: 1.5;"><span style="color: #1A1D21;">把&quot;凭感觉改 Prompt&quot;变成</span><span style="color: #D96C2C;">改 → 测 → 评 → 再改</span><span style="color: #1A1D21;">的闭环。</span></p>'
+        wrap: true
+      elementId: left-conclusion
+      elementType: text
+    - bounds:
+        - 508
+        - 126
+        - 388
+        - 22
+      content:
+        style: $text9
+        text: <p>评估流水线：四步，全部交给模型</p>
+        wrap: false
+      elementId: right-title
+      elementType: text
+    - bounds:
+        - 508
+        - 156
+        - 388
+        - 1
+      elementId: right-rule
+      elementType: shape
+      fill:
+        color: '#E4E2DA'
+        type: solid
+      shapeName: rect
+    - bounds:
+        - 508
+        - 172
+        - 180
+        - 64
+      elementId: e1-box
+      elementType: shape
+      fill:
+        color: '#F1EFE8'
+        type: solid
+      shapeName: rect
+    - bounds:
+        - 508
+        - 180
+        - 180
+        - 48
+      content:
+        align:
+            - center
+            - middle
+        style: $text25
+        text: '<p style="text-align: center; line-height: 1.5;"><span style="color: #1A1D21; font-size: 12px;"><strong>① 分析</strong></span></p><p style="text-align: center; line-height: 1.5;"><span style="color: #6E747C; font-size: 11px;">诊断当前 Prompt</span></p>'
+        wrap: true
+      elementId: e1-t
+      elementType: text
+    - bounds:
+        - 716
+        - 172
+        - 180
+        - 64
+      elementId: e2-box
+      elementType: shape
+      fill:
+        color: '#F1EFE8'
+        type: solid
+      shapeName: rect
+    - bounds:
+        - 716
+        - 180
+        - 180
+        - 48
+      content:
+        align:
+            - center
+            - middle
+        style: $text25
+        text: '<p style="text-align: center; line-height: 1.5;"><span style="color: #1A1D21; font-size: 12px;"><strong>② 单项评估</strong></span></p><p style="text-align: center; line-height: 1.5;"><span style="color: #6E747C; font-size: 11px;">给一份输出打分</span></p>'
+        wrap: true
+      elementId: e2-t
+      elementType: text
+    - bounds:
+        - 508
+        - 252
+        - 180
+        - 64
+      elementId: e3-box
+      elementType: shape
+      fill:
+        color: '#F1EFE8'
+        type: solid
+      shapeName: rect
+    - bounds:
+        - 508
+        - 260
+        - 180
+        - 48
+      content:
+        align:
+            - center
+            - middle
+        style: $text25
+        text: '<p style="text-align: center; line-height: 1.5;"><span style="color: #1A1D21; font-size: 12px;"><strong>③ 对比评估</strong></span></p><p style="text-align: center; line-height: 1.5;"><span style="color: #6E747C; font-size: 11px;">两版输出比高下</span></p>'
+        wrap: true
+      elementId: e3-t
+      elementType: text
+    - border:
+        color: '#17705F'
+        style: solid
+        width: 1
+      bounds:
+        - 716
+        - 252
+        - 180
+        - 64
+      elementId: e4-box
+      elementType: shape
+      fill:
+        color: '#F1EFE8'
+        type: solid
+      shapeName: rect
+    - bounds:
+        - 716
+        - 260
+        - 180
+        - 48
+      content:
+        align:
+            - center
+            - middle
+        style: $text25
+        text: '<p style="text-align: center; line-height: 1.5;"><span style="color: #1A1D21; font-size: 12px;"><strong>④ 评估驱动重写</strong></span></p><p style="text-align: center; line-height: 1.5;"><span style="color: #17705F; font-size: 11px;">按评分意见自动改</span></p>'
+        wrap: true
+      elementId: e4-t
+      elementType: text
+    - bounds:
+        - 508
+        - 336
+        - 388
+        - 60
+      content:
+        align:
+            - left
+            - top
+        style: $text20
+        text: '<p style="text-align: left; line-height: 1.7;">· 评分维度同样由内置的 <strong>evaluation 模板</strong>定义——评测本身也是一次 Prompt 调用。</p><p style="text-align: left; line-height: 1.7; margin-top: 6px;">· 第 ④ 步把「评」接回「改」，闭环就此打通。</p>'
+        wrap: true
+      elementId: right-note
+      elementType: text
+    - bounds:
+        - 64
+        - 514
+        - 360
+        - 22
+      content:
+        style: $text3
+        text: '<p style="line-height: 1.6;">开源项目分享 · Prompt Optimizer</p>'
+        wrap: false
+      elementId: footer-left
+      elementType: text
+    - bounds:
+        - 870
+        - 514
+        - 26
+        - 12
+      content:
+        align:
+            - right
+            - top
+        style: $text3
+        text: '<p style="text-align: right; line-height: 1.6;">13</p>'
+        wrap: false
+      elementId: footer-page
+      elementType: text
+notes: |-
+    改完Prompt不代表优化就结束了，Prompt Optimizer提供了完整的对比测试和自动评估能力，帮你把优化从“凭感觉试错”拉回可控闭环。
+    对比测试支持同题并排跑，同一个测试用例，原始Prompt和优化后Prompt各跑一遍，结果直接并排展示。支持最多四列同时对比，还能挂不同大模型同时跑。开启变量模式，换一组变量值就能测试一类场景，不用只测单个例子。
+    评估流水线一共四步，全部交给大模型自动完成。第一步分析诊断当前Prompt，第二步给单份输出打分，第三步对比两版输出分出高下，第四步按评分意见自动重写优化。
+    评分维度由内置evaluation模板定义，评测本身就是一次Prompt调用。第四步把评估结果接回优化流程，完整的改-测-评-改闭环就此打通。
+pageType: content

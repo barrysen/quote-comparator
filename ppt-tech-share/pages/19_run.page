@@ -1,0 +1,148 @@
+background:
+  color: $paper
+  type: solid
+pageType: content
+notes: 上手：一分钟跑起来
+elements:
+  - bounds: [64, 38, 400, 16]
+    content:
+      style: $kicker
+      text: PART 04 · TRY
+      wrap: false
+    elementId: kicker
+    elementType: text
+  - bounds: [64, 60, 832, 40]
+    content:
+      style: $title
+      text: 上手：三条路径，一分钟跑起来
+      wrap: false
+    elementId: title
+    elementType: text
+  - bounds: [64, 108, 832, 1]
+    elementId: rule
+    elementType: shape
+    fill: {color: $line, type: solid}
+    shapeName: rect
+  - bounds: [64, 140, 40, 40]
+    content:
+      style: $monobig
+      fontSize: 24
+      text: '01'
+      wrap: false
+    elementId: n1
+    elementType: text
+  - bounds: [120, 138, 776, 22]
+    content:
+      bold: true
+      color: $ink
+      fontFamily: MiSans, MiSans
+      fontSize: 15
+      text: 一键启动 Web UI
+      wrap: false
+    elementId: t1
+    elementType: text
+  - bounds: [120, 164, 776, 40]
+    content:
+      style: $body
+      fontSize: 12
+      align: [left, top]
+      text: |
+        <p><span style="font-family:JetBrains Mono; color:$green">./start.sh</span>（或双击"启动工具.command"），首次自动装依赖，随后同时拉起前后端，打开 <span style="font-family:JetBrains Mono">http://localhost:3000</span></p>
+    elementId: d1
+    elementType: text
+  - bounds: [64, 216, 832, 1]
+    elementId: r1
+    elementType: shape
+    fill: {color: $line, type: solid}
+    shapeName: rect
+  - bounds: [64, 236, 40, 40]
+    content:
+      style: $monobig
+      fontSize: 24
+      text: '02'
+      wrap: false
+    elementId: n2
+    elementType: text
+  - bounds: [120, 234, 776, 22]
+    content:
+      bold: true
+      color: $ink
+      fontFamily: MiSans, MiSans
+      fontSize: 15
+      text: 没配 API Key 也能玩
+      wrap: false
+    elementId: t2
+    elementType: text
+  - bounds: [120, 260, 776, 40]
+    content:
+      style: $body
+      fontSize: 12
+      align: [left, top]
+      text: |
+        <p>点「<strong>跑一份演示样本</strong>」：内置 6 份虚拟报价（含扫描件、微信文字、拍照图），离线跑完整流程，不消耗 API</p>
+    elementId: d2
+    elementType: text
+  - bounds: [64, 312, 832, 1]
+    elementId: r2
+    elementType: shape
+    fill: {color: $line, type: solid}
+    shapeName: rect
+  - bounds: [64, 332, 40, 40]
+    content:
+      style: $monobig
+      fontSize: 24
+      text: '03'
+      wrap: false
+    elementId: n3
+    elementType: text
+  - bounds: [120, 330, 776, 22]
+    content:
+      bold: true
+      color: $ink
+      fontFamily: MiSans, MiSans
+      fontSize: 15
+      text: 命令行批处理
+      wrap: false
+    elementId: t3
+    elementType: text
+  - bounds: [120, 356, 776, 40]
+    content:
+      style: $body
+      fontSize: 12
+      align: [left, top]
+      text: |
+        <p><span style="font-family:JetBrains Mono; color:$green">python -m src.cli extract ./报价文件夹 -o 比价结果.xlsx [--force]</span>，输出 Excel + result.json + report.txt 三份产物</p>
+    elementId: d3
+    elementType: text
+  - bounds: [64, 410, 832, 1]
+    elementId: r3
+    elementType: shape
+    fill: {color: $line, type: solid}
+    shapeName: rect
+  - bounds: [64, 428, 832, 32]
+    content:
+      fontFamily: MiSans, MiSans
+      fontSize: 14
+      color: $ink
+      align: [left, middle]
+      text: |
+        <p>质量兜底：<span style="font-family:JetBrains Mono; color:$green">pytest</span> 共 <strong>153 项测试</strong>，各阶段单测 + 端到端回归 + Web 接口，全程离线回放，无需 API Key。</p>
+      wrap: false
+    elementId: bottom-note
+    elementType: text
+  - bounds: [64, 478, 560, 16]
+    content:
+      style: $small
+      text: 技术分享 · 报价单提取比价工具
+      wrap: false
+    elementId: footer
+    elementType: text
+  - bounds: [860, 478, 36, 16]
+    content:
+      style: $mono
+      fontSize: 12
+      align: [right, top]
+      text: '19'
+      wrap: false
+    elementId: page-num
+    elementType: text

@@ -1,0 +1,261 @@
+background:
+    color: '#FCFCFA'
+    type: solid
+elements:
+    - bounds:
+        - 64
+        - 38
+        - 500
+        - 16
+      content:
+        style: $text4
+        text: <p>PART 01 · WHAT</p>
+        wrap: false
+      elementId: kicker
+      elementType: text
+    - bounds:
+        - 64
+        - 58
+        - 832
+        - 36
+      content:
+        style: $text5
+        text: <p>项目名片：一个纯前端的 Prompt 优化工作站</p>
+        wrap: false
+      elementId: title
+      elementType: text
+    - bounds:
+        - 64
+        - 108
+        - 832
+        - 1
+      elementId: rule
+      elementType: shape
+      fill:
+        color: '#E4E2DA'
+        type: solid
+      shapeName: rect
+    - bounds:
+        - 64
+        - 138
+        - 250
+        - 44
+      content:
+        style: $text12
+        text: '<p style="line-height: 1.6;">33k+</p>'
+        wrap: false
+      elementId: stat1-num
+      elementType: text
+    - bounds:
+        - 64
+        - 188
+        - 250
+        - 20
+      content:
+        style: $text18
+        text: '<p style="line-height: 1.7;">GitHub Stars</p>'
+        wrap: false
+      elementId: stat1-label
+      elementType: text
+    - bounds:
+        - 64
+        - 212
+        - 250
+        - 52
+      content:
+        align:
+            - left
+            - top
+        style: $text13
+        text: '<p style="text-align: left; line-height: 1.6;">2025 年 2 月创建，一年半进入 Prompt 工具类第一梯队。</p>'
+        wrap: true
+      elementId: stat1-desc
+      elementType: text
+    - bounds:
+        - 356
+        - 138
+        - 250
+        - 44
+      content:
+        style: $text12
+        text: '<p style="line-height: 1.6;">3.9k+</p>'
+        wrap: false
+      elementId: stat2-num
+      elementType: text
+    - bounds:
+        - 356
+        - 188
+        - 250
+        - 20
+      content:
+        style: $text18
+        text: '<p style="line-height: 1.7;">Forks</p>'
+        wrap: false
+      elementId: stat2-label
+      elementType: text
+    - bounds:
+        - 356
+        - 212
+        - 250
+        - 52
+      content:
+        align:
+            - left
+            - top
+        style: $text13
+        text: '<p style="text-align: left; line-height: 1.6;">中文开发者主导，文档中英双语，社区活跃。</p>'
+        wrap: true
+      elementId: stat2-desc
+      elementType: text
+    - bounds:
+        - 648
+        - 138
+        - 250
+        - 44
+      content:
+        style: $text12
+        text: '<p style="line-height: 1.6;">7+</p>'
+        wrap: false
+      elementId: stat3-num
+      elementType: text
+    - bounds:
+        - 648
+        - 188
+        - 250
+        - 20
+      content:
+        style: $text18
+        text: '<p style="line-height: 1.7;">接入的大模型平台</p>'
+        wrap: false
+      elementId: stat3-label
+      elementType: text
+    - bounds:
+        - 648
+        - 212
+        - 248
+        - 52
+      content:
+        align:
+            - left
+            - top
+        style: $text13
+        text: '<p style="text-align: left; line-height: 1.6;">OpenAI / Gemini / DeepSeek / Grok / 智谱 / 硅基流动 / MiniMax…</p>'
+        wrap: true
+      elementId: stat3-desc
+      elementType: text
+    - bounds:
+        - 64
+        - 292
+        - 832
+        - 1
+      elementId: mid-rule
+      elementType: shape
+      fill:
+        color: '#E4E2DA'
+        type: solid
+      shapeName: rect
+    - bounds:
+        - 64
+        - 312
+        - 396
+        - 16
+      content:
+        style: $text6
+        text: '<p style="line-height: 1.6;">一句话定位</p>'
+        wrap: false
+      elementId: pos-label
+      elementType: text
+    - border:
+        color: '#17705F'
+        style: solid
+        width: 1
+      bounds:
+        - 64
+        - 334
+        - 396
+        - 138
+      elementId: pos-panel
+      elementType: shape
+      fill:
+        color: '#F1EFE8'
+        type: solid
+      shapeName: rect
+    - bounds:
+        - 80
+        - 348
+        - 364
+        - 112
+      content:
+        align:
+            - left
+            - middle
+        style: $text10
+        text: '<p style="text-align: left; line-height: 1.7;">帮你写出更好 Prompt 的 AI 工具：</p><p style="text-align: left; line-height: 1.7;">输入粗糙的想法，输出结构化的专业提示词，</p><p style="text-align: left; line-height: 1.7;">并能当场测试、评分、沉淀为可复用资产。</p>'
+        wrap: true
+      elementId: pos-text
+      elementType: text
+    - bounds:
+        - 508
+        - 312
+        - 388
+        - 16
+      content:
+        style: $text6
+        text: '<p style="line-height: 1.6;">两个关键属性</p>'
+        wrap: false
+      elementId: attr-label
+      elementType: text
+    - bounds:
+        - 508
+        - 334
+        - 388
+        - 138
+      elementId: attr-panel
+      elementType: shape
+      fill:
+        color: '#F1EFE8'
+        type: solid
+      shapeName: rect
+    - bounds:
+        - 524
+        - 348
+        - 356
+        - 112
+      content:
+        align:
+            - left
+            - middle
+        style: $text10
+        text: '<p style="text-align: left; line-height: 1.7;">· <strong>纯前端架构</strong>：浏览器直连模型服务商，数据不过中间服务器</p><p style="text-align: left; line-height: 1.7; margin-top: 6px;">· <strong>AGPL-3.0 协议</strong>：可商用，但对外提供服务必须开源</p>'
+        wrap: true
+      elementId: attr-text
+      elementType: text
+    - bounds:
+        - 64
+        - 514
+        - 360
+        - 22
+      content:
+        style: $text3
+        text: '<p style="line-height: 1.6;">开源项目分享 · Prompt Optimizer</p>'
+        wrap: false
+      elementId: footer-left
+      elementType: text
+    - bounds:
+        - 870
+        - 514
+        - 26
+        - 12
+      content:
+        align:
+            - right
+            - top
+        style: $text3
+        text: '<p style="text-align: right; line-height: 1.6;">05</p>'
+        wrap: false
+      elementId: footer-page
+      elementType: text
+notes: |-
+    这个诞生仅一年半的项目，已经拿下33k+Stars、3.9k+Forks，稳居Prompt工具第一梯队。
+    它由中文开发者主导，支持7家主流大模型，是帮你把粗糙想法转化为专业Prompt的纯前端优化工作站，数据直连模型服务商不经过第三方服务器，遵循AGPL-3.0开源协议。
+pageType: content

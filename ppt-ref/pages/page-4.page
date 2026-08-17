@@ -1,0 +1,193 @@
+background:
+    color: '#1A1D21'
+    type: solid
+elements:
+    - bounds:
+        - 64
+        - 148
+        - 300
+        - 18
+      content:
+        style: $text14
+        text: '<p style="line-height: 1.6;">PART 01</p>'
+        wrap: false
+      elementId: part-label
+      elementType: text
+    - bounds:
+        - 64
+        - 178
+        - 760
+        - 56
+      content:
+        style: $text15
+        text: <p>项目是什么</p>
+        wrap: false
+      elementId: part-title
+      elementType: text
+    - bounds:
+        - 64
+        - 246
+        - 760
+        - 24
+      content:
+        style: $text16
+        text: <p>Prompt Optimizer：一句话定位、要解决的痛点、功能与使用形态</p>
+        wrap: false
+      elementId: part-sub
+      elementType: text
+    - border:
+        color: '#3A3F45'
+        style: solid
+        width: 1
+      bounds:
+        - 64
+        - 330
+        - 84
+        - 36
+      elementId: dchip-1
+      elementType: shape
+      shapeName: rect
+    - bounds:
+        - 64
+        - 330
+        - 84
+        - 36
+      content:
+        align:
+            - center
+            - middle
+        style: $text17
+        text: '<p style="text-align: center; line-height: 1.6;">GitHub</p>'
+        wrap: false
+      elementId: dchip-1t
+      elementType: text
+    - border:
+        color: '#3A3F45'
+        style: solid
+        width: 1
+      bounds:
+        - 164
+        - 330
+        - 76
+        - 36
+      elementId: dchip-2
+      elementType: shape
+      shapeName: rect
+    - bounds:
+        - 164
+        - 330
+        - 76
+        - 36
+      content:
+        align:
+            - center
+            - middle
+        style: $text17
+        text: '<p style="text-align: center; line-height: 1.6;">33k ★</p>'
+        wrap: false
+      elementId: dchip-2t
+      elementType: text
+    - border:
+        color: '#3A3F45'
+        style: solid
+        width: 1
+      bounds:
+        - 256
+        - 330
+        - 72
+        - 36
+      elementId: dchip-3
+      elementType: shape
+      shapeName: rect
+    - bounds:
+        - 256
+        - 330
+        - 72
+        - 36
+      content:
+        align:
+            - center
+            - middle
+        style: $text17
+        text: '<p style="text-align: center; line-height: 1.6;">Vue 3</p>'
+        wrap: false
+      elementId: dchip-3t
+      elementType: text
+    - border:
+        color: '#3A3F45'
+        style: solid
+        width: 1
+      bounds:
+        - 344
+        - 330
+        - 104
+        - 36
+      elementId: dchip-4
+      elementType: shape
+      shapeName: rect
+    - bounds:
+        - 344
+        - 330
+        - 104
+        - 36
+      content:
+        align:
+            - center
+            - middle
+        style: $text17
+        text: '<p style="text-align: center; line-height: 1.6;">TypeScript</p>'
+        wrap: false
+      elementId: dchip-4t
+      elementType: text
+    - border:
+        color: '#3A3F45'
+        style: solid
+        width: 1
+      bounds:
+        - 464
+        - 330
+        - 88
+        - 36
+      elementId: dchip-5
+      elementType: shape
+      shapeName: rect
+    - bounds:
+        - 464
+        - 330
+        - 88
+        - 36
+      content:
+        align:
+            - center
+            - middle
+        style: $text17
+        text: '<p style="text-align: center; line-height: 1.6;">AGPL-3.0</p>'
+        wrap: false
+      elementId: dchip-5t
+      elementType: text
+    - bounds:
+        - 64
+        - 478
+        - 600
+        - 14
+      content:
+        style: $text6
+        text: '<p style="line-height: 1.6;"># what / features / platforms</p>'
+        wrap: false
+      elementId: footnote-mono
+      elementType: text
+    - bounds:
+        - 870
+        - 478
+        - 26
+        - 14
+      content:
+        align:
+            - right
+            - top
+        style: $text6
+        text: '<p style="text-align: right; line-height: 1.6;">04</p>'
+        wrap: false
+      elementId: footer-page
+      elementType: text
+pageType: content

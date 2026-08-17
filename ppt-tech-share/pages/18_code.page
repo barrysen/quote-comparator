@@ -1,0 +1,84 @@
+background:
+  color: $paper
+  type: solid
+pageType: content
+notes: 代码怎么组织：分层与技术栈
+elements:
+  - bounds: [64, 38, 400, 16]
+    content:
+      style: $kicker
+      text: PART 04 · CODE
+      wrap: false
+    elementId: kicker
+    elementType: text
+  - bounds: [64, 60, 832, 40]
+    content:
+      style: $title
+      text: 代码怎么组织：五层结构，各管一段
+      wrap: false
+    elementId: title
+    elementType: text
+  - bounds: [64, 108, 832, 1]
+    elementId: rule
+    elementType: shape
+    fill: {color: $line, type: solid}
+    shapeName: rect
+  - bounds: [64, 128, 832, 236]
+    columnWidths: [0.24, 0.44, 0.32]
+    elementId: table-arch
+    elementType: table
+    rowHeights: [0.12, 0.176, 0.176, 0.176, 0.176, 0.176]
+    rows:
+      - - text: 层
+        - text: 职责
+        - text: 技术选型
+      - - text: web/
+        - text: 前端界面：上传文件夹、跑演示、下载结果
+        - text: Vite + React 19 + TS + Tailwind + shadcn/ui
+      - - text: src/web/
+        - text: Web 后端：任务制包装流水线，产物按任务隔离
+        - text: FastAPI
+      - - text: src/pipeline/
+        - text: 六个阶段纯函数模块，pydantic 模型贯穿全程
+        - text: Python 3.11+ / pydantic
+      - - text: src/llm/
+        - text: 唯一 LLM 入口：重试 / 超时 / JSON Schema / 分块 / 离线回放
+        - text: openai SDK，端点可换
+      - - text: OCR & 导出
+        - text: 扫描件识别；多 Sheet 五色标色工作簿
+        - text: RapidOCR（可切 PaddleOCR）/ openpyxl
+    style: $mono
+  - bounds: [64, 384, 200, 18]
+    content:
+      style: $kicker
+      fontSize: 10
+      text: 接口契约 · 写进开发任务书
+      wrap: false
+    elementId: label-contract
+    elementType: text
+  - bounds: [64, 410, 832, 52]
+    content:
+      style: $body
+      fontSize: 12
+      align: [left, top]
+      text: |
+        <p>· 每阶段输出写入 <span style="font-family:JetBrains Mono; color:$green">intermediates/{文件}/{阶段}.json</span>，存在即跳过（--force 重跑）</p>
+        <p style="margin-top:4px">· LLM 只允许经 <span style="font-family:JetBrains Mono; color:$green">llm/client.py</span> 调用，其余模块<span style="color:$orange"><strong>禁止 import openai</strong></span></p>
+    elementId: contract-body
+    elementType: text
+  - bounds: [64, 478, 560, 16]
+    content:
+      style: $small
+      text: 技术分享 · 报价单提取比价工具
+      wrap: false
+    elementId: footer
+    elementType: text
+  - bounds: [860, 478, 36, 16]
+    content:
+      style: $mono
+      fontSize: 12
+      align: [right, top]
+      text: '18'
+      wrap: false
+    elementId: page-num
+    elementType: text

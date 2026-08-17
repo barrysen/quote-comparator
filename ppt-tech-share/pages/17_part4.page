@@ -1,0 +1,81 @@
+background:
+  color: $dark
+  type: solid
+pageType: chapter
+notes: 章节页：工程组织与上手
+elements:
+  - bounds: [64, 148, 300, 18]
+    content:
+      style: $dkicker
+      text: PART 04
+      wrap: false
+    elementId: part-label
+    elementType: text
+  - bounds: [64, 178, 760, 56]
+    content:
+      style: $dtitle
+      text: 工程组织与上手
+      wrap: false
+    elementId: part-title
+    elementType: text
+  - bounds: [64, 246, 820, 24]
+    content:
+      style: $dsub
+      text: 代码分层、接口契约、测试体系，以及一分钟把工具跑起来
+      wrap: false
+    elementId: part-sub
+    elementType: text
+  - border: {color: $dchip, style: solid, width: 1}
+    bounds: [64, 330, 96, 36]
+    elementId: dchip-1
+    elementType: shape
+    shapeName: rect
+  - bounds: [64, 330, 96, 36]
+    content:
+      align: [center, middle]
+      style: $dchip
+      text: 153 tests
+      wrap: false
+    elementId: dchip-1t
+    elementType: text
+  - border: {color: $dchip, style: solid, width: 1}
+    bounds: [176, 330, 116, 36]
+    elementId: dchip-2
+    elementType: shape
+    shapeName: rect
+  - bounds: [176, 330, 116, 36]
+    content:
+      align: [center, middle]
+      style: $dchip
+      text: offline replay
+      wrap: false
+    elementId: dchip-2t
+    elementType: text
+  - border: {color: $dchip, style: solid, width: 1}
+    bounds: [308, 330, 120, 36]
+    elementId: dchip-3
+    elementType: shape
+    shapeName: rect
+  - bounds: [308, 330, 120, 36]
+    content:
+      align: [center, middle]
+      style: $dchip
+      text: CLI + Web UI
+      wrap: false
+    elementId: dchip-3t
+    elementType: text
+  - bounds: [64, 478, 600, 14]
+    content:
+      style: $mono
+      text: '# structure / testing / quickstart'
+      wrap: false
+    elementId: footnote-mono
+    elementType: text
+  - bounds: [870, 478, 26, 14]
+    content:
+      align: [right, top]
+      style: $mono
+      text: '17'
+      wrap: false
+    elementId: footer-page
+    elementType: text

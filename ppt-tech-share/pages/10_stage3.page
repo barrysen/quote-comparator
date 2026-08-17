@@ -1,0 +1,137 @@
+background:
+  color: $paper
+  type: solid
+pageType: content
+notes: 阶段三：LLM结构化解析
+elements:
+  - bounds: [64, 38, 400, 16]
+    content:
+      style: $kicker
+      text: PART 02 · PIPELINE
+      wrap: false
+    elementId: kicker
+    elementType: text
+  - bounds: [64, 60, 832, 40]
+    content:
+      style: $title
+      text: 阶段 3：LLM 结构化解析，全场唯一接触模型的环节
+      wrap: false
+    elementId: title
+    elementType: text
+  - bounds: [64, 108, 832, 1]
+    elementId: rule
+    elementType: shape
+    fill: {color: $line, type: solid}
+    shapeName: rect
+  - bounds: [64, 134, 200, 18]
+    content:
+      style: $kicker
+      fontSize: 10
+      text: 调用纪律
+      wrap: false
+    elementId: label-a
+    elementType: text
+  - bounds: [64, 160, 396, 118]
+    elementId: box-a
+    elementType: shape
+    fill: {color: $beige, type: solid}
+    shapeName: rect
+  - bounds: [80, 172, 364, 96]
+    content:
+      style: $body
+      fontSize: 12
+      align: [left, top]
+      text: |
+        <p>· OpenAI 兼容接口 + <strong>JSON Schema 强制结构化输出</strong></p>
+        <p style="margin-top:6px">· temperature = 0，超时 60s，指数退避重试 3 次</p>
+        <p style="margin-top:6px">· 超长文本按行切块分批提取再合并</p>
+    elementId: box-a-t
+    elementType: text
+  - bounds: [64, 296, 200, 18]
+    content:
+      style: $kicker
+      fontSize: 10
+      text: PROMPT 构成
+      wrap: false
+    elementId: label-b
+    elementType: text
+  - bounds: [64, 322, 396, 136]
+    border: {color: $green, style: solid, width: 1}
+    elementId: box-b
+    elementType: shape
+    shapeName: rect
+  - bounds: [80, 334, 364, 116]
+    content:
+      style: $body
+      fontSize: 12
+      align: [left, top]
+      text: |
+        <p>· 任务说明：提取供应商名 + 逐行报价明细</p>
+        <p style="margin-top:6px">· <strong>5 组 few-shot</strong>：Excel 表格型 / 正式报价单 / 邮件散文 / 微信简讯 / OCR 噪音型</p>
+        <p style="margin-top:6px">· 每行必须带 <span style="font-family:JetBrains Mono; color:$green">confidence</span> + <span style="font-family:JetBrains Mono; color:$green">source_snippet</span>（原文片段）</p>
+    elementId: box-b-t
+    elementType: text
+  - bounds: [500, 134, 200, 18]
+    content:
+      style: $kicker
+      fontSize: 10
+      color: $orange
+      text: 硬性禁令 · 写进 PROMPT
+      wrap: false
+    elementId: label-c
+    elementType: text
+  - bounds: [500, 160, 396, 138]
+    elementId: box-c
+    elementType: shape
+    fill: {color: $beige, type: solid}
+    shapeName: rect
+  - bounds: [516, 172, 364, 118]
+    content:
+      style: $body
+      fontSize: 12
+      align: [left, top]
+      text: |
+        <p>· 所有字段值必须<strong>逐字来自原文</strong></p>
+        <p style="margin-top:6px">· 原文没有的字段一律留空，该行 confidence 标 low</p>
+        <p style="margin-top:6px">· <span style="color:$orange"><strong>绝不允许推算、补全、四舍五入</strong></span> —— 计算全部交给规则阶段</p>
+    elementId: box-c-t
+    elementType: text
+  - bounds: [500, 316, 200, 18]
+    content:
+      style: $kicker
+      fontSize: 10
+      text: 失败降级
+      wrap: false
+    elementId: label-d
+    elementType: text
+  - bounds: [500, 342, 396, 116]
+    border: {color: $line, style: solid, width: 1}
+    elementId: box-d
+    elementType: shape
+    shapeName: rect
+  - bounds: [516, 354, 364, 96]
+    content:
+      style: $body
+      fontSize: 12
+      align: [left, top]
+      text: |
+        <p>LLM 连续重试失败时：</p>
+        <p style="margin-top:6px"><span style="color:$gray">该文件降级为"原始文本原样导出到单独 Sheet + 整体标黄"，记入失败清单，批处理继续跑。</span></p>
+    elementId: box-d-t
+    elementType: text
+  - bounds: [64, 478, 560, 16]
+    content:
+      style: $small
+      text: 技术分享 · 报价单提取比价工具
+      wrap: false
+    elementId: footer
+    elementType: text
+  - bounds: [860, 478, 36, 16]
+    content:
+      style: $mono
+      fontSize: 12
+      align: [right, top]
+      text: '10'
+      wrap: false
+    elementId: page-num
+    elementType: text

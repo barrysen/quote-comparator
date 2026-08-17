@@ -1,0 +1,80 @@
+background:
+  color: $paper
+  type: solid
+pageType: content
+notes: 阶段四：规则校验V1到V7
+elements:
+  - bounds: [64, 38, 400, 16]
+    content:
+      style: $kicker
+      text: PART 02 · PIPELINE
+      wrap: false
+    elementId: kicker
+    elementType: text
+  - bounds: [64, 60, 832, 40]
+    content:
+      style: $title
+      text: 阶段 4：七条规则校验，把 LLM 的脏数据洗干净
+      wrap: false
+    elementId: title
+    elementType: text
+  - bounds: [64, 108, 832, 1]
+    elementId: rule
+    elementType: shape
+    fill: {color: $line, type: solid}
+    shapeName: rect
+  - bounds: [64, 130, 832, 268]
+    columnWidths: [0.16, 0.5, 0.34]
+    elementId: table-v
+    elementType: table
+    rowHeights: [0.1, 0.1286, 0.1286, 0.1286, 0.1286, 0.1286, 0.1286, 0.1284]
+    rows:
+      - - text: 规则
+        - text: 检查内容
+        - text: 处理
+      - - text: V1 必填
+        - text: 物料名称、单价为空
+        - text: 标黄
+      - - text: V2 数值解析
+        - text: '"4件" "¥1,200.00" 等文本解析为数值'
+        - text: 失败标黄，保留原文
+      - - text: V3 金额核对
+        - text: 数量 × 单价 ≈ 金额（±2% 容差）
+        - text: 不符标黄并注明差额
+      - - text: V4 币种税率
+        - text: 识别币种与"含税 / 未税"字样
+        - text: 只标注，不做换算
+      - - text: V5 交期解析
+        - text: '"7天" "两周" "现货"→0 解析为天数'
+        - text: 失败保留原文并标黄
+      - - text: V6 单位归一
+        - text: 个 / 件 / pcs / PCS → 件（映射表可配）
+        - text: 自动归一
+      - - text: V7 供应商一致
+        - text: 同一文件出现多个供应商名
+        - text: 标黄整个文件
+    style: $mono
+  - bounds: [64, 420, 832, 40]
+    content:
+      style: $body
+      align: [left, top]
+      text: |
+        <p>每条规则一个独立函数 <span style="font-family:JetBrains Mono; color:$green">check(quote) -&gt; list[Finding]</span>，Finding 永远带 <strong>文件名#行号 + 规则号 + 说明</strong> —— 全部可单测、不依赖 LLM。</p>
+    elementId: bottom-note
+    elementType: text
+  - bounds: [64, 478, 560, 16]
+    content:
+      style: $small
+      text: 技术分享 · 报价单提取比价工具
+      wrap: false
+    elementId: footer
+    elementType: text
+  - bounds: [860, 478, 36, 16]
+    content:
+      style: $mono
+      fontSize: 12
+      align: [right, top]
+      text: '11'
+      wrap: false
+    elementId: page-num
+    elementType: text

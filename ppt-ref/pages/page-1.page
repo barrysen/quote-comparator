@@ -1,0 +1,272 @@
+background:
+    color: '#FCFCFA'
+    type: solid
+elements:
+    - bounds:
+        - 64
+        - 44
+        - 560
+        - 16
+      content:
+        color: '#6E747C'
+        fontFamily: JetBrains Mono, JetBrains Mono
+        fontSize: 11
+        letterSpacing: 3
+        lineHeight: 1.6
+        text: '<p style="line-height: 1.6;">TECH TALK · OPEN SOURCE · GITHUB</p>'
+        wrap: false
+      elementId: label-top
+      elementType: text
+    - bounds:
+        - 64
+        - 72
+        - 832
+        - 1
+      elementId: rule-top
+      elementType: shape
+      fill:
+        color: '#E4E2DA'
+        type: solid
+      shapeName: rect
+    - bounds:
+        - 64
+        - 150
+        - 800
+        - 66
+      content:
+        align:
+            - left
+            - middle
+        bold: true
+        color: '#1A1D21'
+        fontFamily: MiSans, MiSans
+        fontSize: 50
+        text: '<p style="text-align: left;">让 AI 帮你写 Prompt</p>'
+        wrap: false
+      elementId: title-main
+      elementType: text
+    - bounds:
+        - 64
+        - 228
+        - 832
+        - 28
+      content:
+        align:
+            - left
+            - middle
+        color: '#6E747C'
+        fontFamily: MiSans, MiSans
+        fontSize: 19
+        text: '<p style="text-align: left;">开源项目 Prompt Optimizer 精读 —— 一个 33k Star 的提示词优化工具</p>'
+        wrap: false
+      elementId: title-sub
+      elementType: text
+    - bounds:
+        - 64
+        - 310
+        - 44
+        - 44
+      elementId: chip-1
+      elementType: shape
+      fill:
+        color: '#17705F'
+        type: solid
+      shapeName: rect
+    - bounds:
+        - 64
+        - 310
+        - 44
+        - 44
+      content:
+        align:
+            - center
+            - middle
+        style: $text1
+        text: '<p style="text-align: center; line-height: 1.6;">P</p>'
+        wrap: false
+      elementId: chip-1-t
+      elementType: text
+    - border:
+        color: '#17705F'
+        style: solid
+        width: 1
+      bounds:
+        - 120
+        - 310
+        - 44
+        - 44
+      elementId: chip-2
+      elementType: shape
+      shapeName: rect
+    - bounds:
+        - 120
+        - 310
+        - 44
+        - 44
+      content:
+        align:
+            - center
+            - middle
+        style: $text2
+        text: '<p style="text-align: center; line-height: 1.6;">R</p>'
+        wrap: false
+      elementId: chip-2-t
+      elementType: text
+    - bounds:
+        - 176
+        - 310
+        - 44
+        - 44
+      elementId: chip-3
+      elementType: shape
+      fill:
+        color: '#17705F'
+        type: solid
+      shapeName: rect
+    - bounds:
+        - 176
+        - 310
+        - 44
+        - 44
+      content:
+        align:
+            - center
+            - middle
+        style: $text1
+        text: '<p style="text-align: center; line-height: 1.6;">O</p>'
+        wrap: false
+      elementId: chip-3-t
+      elementType: text
+    - border:
+        color: '#17705F'
+        style: solid
+        width: 1
+      bounds:
+        - 232
+        - 310
+        - 44
+        - 44
+      elementId: chip-4
+      elementType: shape
+      shapeName: rect
+    - bounds:
+        - 232
+        - 310
+        - 44
+        - 44
+      content:
+        align:
+            - center
+            - middle
+        style: $text2
+        text: '<p style="text-align: center; line-height: 1.6;">M</p>'
+        wrap: false
+      elementId: chip-4-t
+      elementType: text
+    - bounds:
+        - 288
+        - 310
+        - 44
+        - 44
+      elementId: chip-5
+      elementType: shape
+      fill:
+        color: '#17705F'
+        type: solid
+      shapeName: rect
+    - bounds:
+        - 288
+        - 310
+        - 44
+        - 44
+      content:
+        align:
+            - center
+            - middle
+        style: $text1
+        text: '<p style="text-align: center; line-height: 1.6;">P</p>'
+        wrap: false
+      elementId: chip-5-t
+      elementType: text
+    - border:
+        color: '#17705F'
+        style: solid
+        width: 1
+      bounds:
+        - 344
+        - 310
+        - 44
+        - 44
+      elementId: chip-6
+      elementType: shape
+      shapeName: rect
+    - bounds:
+        - 344
+        - 310
+        - 44
+        - 44
+      content:
+        align:
+            - center
+            - middle
+        style: $text2
+        text: '<p style="text-align: center; line-height: 1.6;">T</p>'
+        wrap: false
+      elementId: chip-6-t
+      elementType: text
+    - bounds:
+        - 64
+        - 374
+        - 560
+        - 14
+      content:
+        style: $text3
+        text: '<p style="line-height: 1.6;">optimize · iterate · test · evaluate · assets</p>'
+        wrap: false
+      elementId: chip-caption
+      elementType: text
+    - bounds:
+        - 64
+        - 468
+        - 832
+        - 1
+      elementId: rule-bottom
+      elementType: shape
+      fill:
+        color: '#E4E2DA'
+        type: solid
+      shapeName: rect
+    - bounds:
+        - 64
+        - 482
+        - 560
+        - 16
+      content:
+        align:
+            - left
+            - top
+        color: '#6E747C'
+        fontFamily: MiSans, MiSans
+        fontSize: 12
+        text: '<p style="text-align: left;">分享人：刘衍鹏 ｜ GitHub 开源项目分享</p>'
+        wrap: false
+      elementId: info-bottom
+      elementType: text
+    - bounds:
+        - 820
+        - 482
+        - 76
+        - 16
+      content:
+        align:
+            - right
+            - top
+        color: '#6E747C'
+        fontFamily: JetBrains Mono, JetBrains Mono
+        fontSize: 12
+        text: '<p style="text-align: right;">2026·8</p>'
+        wrap: false
+      elementId: info-year
+      elementType: text
+notes: 提示词优化器
+pageType: content

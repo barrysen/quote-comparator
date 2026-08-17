@@ -1,0 +1,107 @@
+background:
+  color: $paper
+  type: solid
+pageType: content
+notes: 核心机制一：LLM只摘录不计算
+elements:
+  - bounds: [64, 38, 400, 16]
+    content:
+      style: $kicker
+      text: PART 03 · HOW
+      wrap: false
+    elementId: kicker
+    elementType: text
+  - bounds: [64, 60, 832, 40]
+    content:
+      style: $title
+      text: 机制一：LLM 只摘录、不计算
+      wrap: false
+    elementId: title
+    elementType: text
+  - bounds: [64, 108, 832, 1]
+    elementId: rule
+    elementType: shape
+    fill: {color: $line, type: solid}
+    shapeName: rect
+  - bounds: [64, 134, 200, 18]
+    content:
+      style: $kicker
+      fontSize: 10
+      color: $orange
+      text: 常见做法 · 让 LLM 直接算
+      wrap: false
+    elementId: label-bad
+    elementType: text
+  - bounds: [64, 162, 396, 170]
+    border: {color: $line, style: solid, width: 1}
+    elementId: box-bad
+    elementType: shape
+    shapeName: rect
+  - bounds: [82, 176, 360, 146]
+    content:
+      style: $body
+      fontSize: 12
+      color: $gray
+      align: [left, top]
+      text: |
+        <p>把原文丢给模型，让它直接输出"数量 4、单价 1200、金额 4800、高于均价 12%"……</p>
+        <p style="margin-top:8px">模型可能编造价格、擅自四舍五入、脑补原文没有的字段，而且<strong>错了没有任何痕迹</strong>。</p>
+    elementId: box-bad-t
+    elementType: text
+  - bounds: [500, 134, 200, 18]
+    content:
+      style: $kicker
+      fontSize: 10
+      text: 本项目做法 · 分工写进架构
+      wrap: false
+    elementId: label-good
+    elementType: text
+  - bounds: [500, 162, 396, 170]
+    elementId: box-good
+    elementType: shape
+    fill: {color: $beige, type: solid}
+    shapeName: rect
+  - bounds: [518, 176, 360, 146]
+    content:
+      style: $body
+      fontSize: 12
+      align: [left, top]
+      text: |
+        <p>· LLM 只产出<strong>原文片段 + 置信度</strong>，原文怎么写就怎么摘录</p>
+        <p style="margin-top:8px">· 数量 / 单价 / 金额的解析与核对，<strong>全部由规则代码完成</strong></p>
+        <p style="margin-top:8px">· 均价、偏离度、标色判断，只发生在比价阶段</p>
+    elementId: box-good-t
+    elementType: text
+  - bounds: [64, 360, 832, 1]
+    elementId: rule2
+    elementType: shape
+    fill: {color: $line, type: solid}
+    shapeName: rect
+  - bounds: [64, 384, 832, 60]
+    content:
+      fontFamily: MiSans, MiSans
+      fontSize: 15
+      color: $ink
+      lineHeight: 1.6
+      align: [left, top]
+      text: |
+        <p>LLM 输出层<span style="color:$orange"><strong>禁止出现计算值</strong></span> —— 这不是一句 prompt 叮嘱，</p>
+        <p>而是流水线契约：能规则解决的，就不用 LLM。</p>
+    elementId: bottom-emph
+    elementType: text
+  - bounds: [64, 478, 560, 16]
+    content:
+      style: $small
+      text: 技术分享 · 报价单提取比价工具
+      wrap: false
+    elementId: footer
+    elementType: text
+  - bounds: [860, 478, 36, 16]
+    content:
+      style: $mono
+      fontSize: 12
+      align: [right, top]
+      text: '15'
+      wrap: false
+    elementId: page-num
+    elementType: text

@@ -1,0 +1,146 @@
+background:
+    color: '#FCFCFA'
+    type: solid
+elements:
+    - bounds:
+        - 64
+        - 38
+        - 500
+        - 16
+      content:
+        style: $text4
+        text: <p>PART 02 · HOW</p>
+        wrap: false
+      elementId: kicker
+      elementType: text
+    - bounds:
+        - 64
+        - 58
+        - 832
+        - 36
+      content:
+        style: $text5
+        text: <p>项目的心脏：内置优化模板长什么样</p>
+        wrap: false
+      elementId: title
+      elementType: text
+    - bounds:
+        - 64
+        - 108
+        - 832
+        - 1
+      elementId: rule
+      elementType: shape
+      fill:
+        color: '#E4E2DA'
+        type: solid
+      shapeName: rect
+    - bounds:
+        - 64
+        - 126
+        - 430
+        - 16
+      content:
+        style: $text6
+        text: '<p style="line-height: 1.6;">general-optimize 模板（节选）</p>'
+        wrap: false
+      elementId: tpl-label
+      elementType: text
+    - bounds:
+        - 64
+        - 148
+        - 430
+        - 324
+      elementId: tpl-panel
+      elementType: shape
+      fill:
+        color: '#1A1D21'
+        type: solid
+      shapeName: rect
+    - bounds:
+        - 82
+        - 164
+        - 394
+        - 292
+      content:
+        align:
+            - left
+            - top
+        color: $dk1
+        fontFamily: JetBrains Mono, JetBrains Mono
+        fontSize: 11
+        lineHeight: 1.65
+        text: '<p style="text-align: left; line-height: 1.65;"><span style="color: #C9CDD2;">你是一个专业的AI提示词优化专家。请帮我优化以下 prompt，并按照以下格式返回：</span></p><p style="text-align: left; line-height: 1.65; margin-top: 6px;"><span style="color: #E8956D;"># Role:</span><span style="color: #C9CDD2;"> [角色名称]</span></p><p style="text-align: left; line-height: 1.65;"><span style="color: #E8956D;">## Profile</span><span style="color: #C9CDD2;">  语言 / 背景 / 性格 / 专长</span></p><p style="text-align: left; line-height: 1.65;"><span style="color: #E8956D;">## Skills</span><span style="color: #C9CDD2;">   核心技能 + 辅助技能</span></p><p style="text-align: left; line-height: 1.65;"><span style="color: #E8956D;">## Rules</span><span style="color: #C9CDD2;">    基本原则 / 行为准则 / 限制</span></p><p style="text-align: left; line-height: 1.65;"><span style="color: #E8956D;">## Workflows</span><span style="color: #C9CDD2;"> 目标 / 步骤 / 预期结果</span></p><p style="text-align: left; line-height: 1.65;"><span style="color: #E8956D;">## Initialization</span><span style="color: #C9CDD2;"> 开场白与约束确认</span></p><p style="text-align: left; line-height: 1.65; margin-top: 6px;"><span style="color: #7BBFAF;">注意：原始 prompt 中的 {{变量}} 占位符，在优化结果中必须逐字保留。</span></p>'
+        wrap: true
+      elementId: tpl-code
+      elementType: text
+    - bounds:
+        - 532
+        - 132
+        - 364
+        - 240
+      content:
+        align:
+            - left
+            - top
+        style: $text10
+        text: '<p style="text-align: left; line-height: 1.7;">· 这套结构化写法源自 <strong>LangGPT</strong>，项目在 README 中明确致谢。</p><p style="text-align: left; line-height: 1.7; margin-top: 8px;">· <strong>模板即资产</strong>：优化质量的上限由模板决定，项目内置 10+ 套模板。</p><p style="text-align: left; line-height: 1.7; margin-top: 8px;">· 按场景细分：通用优化 / 分析型 / 输出格式化 / 文生图 / 图生图 / 多图组合……</p><p style="text-align: left; line-height: 1.7; margin-top: 8px;">· 变量保护写死在模板里：<strong>{{变量}} 必须原样保留</strong>，否则运行时无法替换。</p>'
+        wrap: true
+      elementId: right-body
+      elementType: text
+    - bounds:
+        - 532
+        - 396
+        - 364
+        - 1
+      elementId: right-rule2
+      elementType: shape
+      fill:
+        color: '#E4E2DA'
+        type: solid
+      shapeName: rect
+    - bounds:
+        - 532
+        - 412
+        - 364
+        - 60
+      content:
+        align:
+            - left
+            - top
+        style: $text11
+        text: '<p style="text-align: left; line-height: 1.5;"><span style="color: #1A1D21;">好模板是项目</span><span style="color: #D96C2C;">最值钱的资产</span><span style="color: #1A1D21;">，代码只是搬运工。</span></p>'
+        wrap: true
+      elementId: right-conclusion
+      elementType: text
+    - bounds:
+        - 64
+        - 514
+        - 360
+        - 22
+      content:
+        style: $text3
+        text: '<p style="line-height: 1.6;">开源项目分享 · Prompt Optimizer</p>'
+        wrap: false
+      elementId: footer-left
+      elementType: text
+    - bounds:
+        - 870
+        - 514
+        - 26
+        - 12
+      content:
+        align:
+            - right
+            - top
+        style: $text3
+        text: '<p style="text-align: right; line-height: 1.6;">11</p>'
+        wrap: false
+      elementId: footer-page
+      elementType: text
+notes: |-
+    Prompt Optimizer的核心不是代码，而是内置的优化模板。这套模板就是项目的心脏，决定了优化能力的上限。
+    给大家看一眼通用优化模板的节选。模板直接给AI定好身份，要求AI按照固定结构输出优化后的提示词，从角色定义到工作流全覆盖，这套结构化写法源自LangGPT。
+    项目内置了十多套细分场景模板，覆盖通用优化、分析任务、格式输出、文生图等不同需求。所有模板都强制保留原始提示词里的{{变量}}占位符，保证后续变量替换功能能正常运行。
+    好模板本身就是最值钱的资产，代码不过是实现它的搬运工。
+pageType: content
