@@ -7,3 +7,5 @@ output/
 .idea/
 .env
 config/models.yml
+ppt-ref/
+ppt-tech-share/
