@@ -30,22 +30,42 @@
 ### 环境要求
 
 - Python 3.11+ 与 Node.js 20+
-- 一个 OpenAI 兼容的 LLM 端点（默认 DeepSeek，可一键切换本地 vLLM 等）
+- 一个 OpenAI 兼容的 LLM 端点（DeepSeek / Kimi / 本地 vLLM 等均可）
 
-### 一键启动（Web UI，推荐）
+### 第一步：获取代码
 
 ```bash
-./start.sh          # 首次自动创建虚拟环境、安装依赖，随后同时拉起前端与后端
+# 方式一：git 克隆（推荐）
+git clone git@github.com:barrysen/quote-comparator.git
+cd quote-comparator
+
+# 方式二：HTTPS 克隆
+git clone https://github.com/barrysen/quote-comparator.git
+cd quote-comparator
+```
+
+也可以在 GitHub 仓库页点 **Code → Download ZIP** 下载解压，
+或到 [Releases](https://github.com/barrysen/quote-comparator/releases) 下载正式版本的源码包。
+
+### 第二步：一键启动（Web UI，推荐）
+
+```bash
+./start.sh          # 首次自动创建虚拟环境、安装依赖、生成模型配置，随后同时拉起前端与后端
 # macOS 也可以直接双击「启动工具.command」
 ```
 
 打开终端提示的地址（默认 http://localhost:3000）：
 
 - 未配置 API Key 也没关系，点「**跑一份演示样本**」即可离线体验完整流程（内置 6 份虚拟报价，不消耗 API）；
-- 处理真实文件前先配置 Key：
+- 处理真实文件前，在 `config/models.yml` 的档案里填入 Key：
 
-```bash
-export DEEPSEEK_API_KEY="sk-..."
+```yaml
+# config/models.yml（首次启动由模板自动生成，本机文件，不会提交）
+profiles:
+  - name: deepseek
+    base_url: "https://api.deepseek.com/v1"
+    model: "deepseek-chat"
+    api_key: "sk-你的Key"
 ```
 
 ### 命令行（可选）
@@ -54,6 +74,7 @@ export DEEPSEEK_API_KEY="sk-..."
 .venv/bin/python -m src.cli extract ./报价文件夹 -o 比价结果.xlsx [--force]
 ```
 
+CLI 使用 `config/settings.yml` 的 `llm` 段（Key 走环境变量或 `.env`）。
 输出三份产物：比价 Excel（比价总表 / 明细数据 / 统计与异常 / 解析失败原文）、`*.result.json`（完整结构化结果）、`*.report.txt`（人读摘要）。
 
 ### 手动安装
