@@ -12,12 +12,12 @@ export default function Hero({ health }: { health: Health | null }) {
               {health.llm_configured ? (
                 <>
                   <CircleCheck className="h-3.5 w-3.5 text-emerald-600" />
-                  LLM 已配置（{health.llm_key_env}）
+                  LLM 已配置
                 </>
               ) : (
                 <>
                   <CircleAlert className="h-3.5 w-3.5 text-amber-600" />
-                  未配置 {health.llm_key_env}，可在 config/models.yml 填 api_key，或先用演示模式体验
+                  LLM 未配置，可先用演示模式体验
                 </>
               )}
             </p>
