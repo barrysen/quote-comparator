@@ -50,7 +50,18 @@
 
 3. **下载压缩包**（不用 git）：在[仓库页](https://github.com/barrysen/quote-comparator)点 **Code → Download ZIP** 解压，或到 [Releases](https://github.com/barrysen/quote-comparator/releases) 下载正式版本源码包后解压进入目录。
 
-### 第二步：启动（三种方式任选其一）
+### 第二步：安装依赖（两种方式任选其一）
+
+1. **自动安装**（推荐）：无需操作——第三步用 `./start.sh` 启动时，首次运行会自动完成虚拟环境创建与全部依赖安装。
+2. **手动安装**（想自己控制环境时）：
+
+   ```bash
+   python3 -m venv .venv
+   .venv/bin/pip install -e ".[dev,web,ocr]"
+   cd web && npm install
+   ```
+
+### 第三步：启动（三种方式任选其一）
 
 1. **启动脚本**（推荐，跨平台通用）：
 
@@ -58,7 +69,7 @@
    ./start.sh
    ```
 
-   首次运行会自动创建虚拟环境、安装依赖、生成模型配置，随后同时拉起前端与后端。
+   首次运行会自动完成第二步的安装并生成模型配置，随后同时拉起前端与后端。
 
 2. **双击启动**（macOS）：直接双击项目里的「启动工具.command」，效果等同 `./start.sh`。
 
@@ -69,7 +80,9 @@
    cd web && npx vite                                        # 终端 2：仅前端
    ```
 
-打开终端提示的地址（默认 http://localhost:3000）：
+### 第四步：打开页面使用
+
+浏览器打开终端提示的地址（默认 http://localhost:3000）：
 
 - 未配置 API Key 也没关系，点「**跑一份演示样本**」即可离线体验完整流程（内置 6 份虚拟报价，不消耗 API）；
 - 仓库自带 `示例报价单/` 目录（6 份虚拟报价、4 家供应商、覆盖 Excel/PDF/扫描件/图片/文本），可直接拖入上传区测试真实解析；
@@ -84,7 +97,7 @@ profiles:
     api_key: "sk-你的Key"
 ```
 
-### 命令行（可选）
+### 命令行用法（可选，不用 Web UI 时）
 
 ```bash
 .venv/bin/python -m src.cli extract ./报价文件夹 -o 比价结果.xlsx [--force]
@@ -92,14 +105,6 @@ profiles:
 
 CLI 使用 `config/settings.yml` 的 `llm` 段（Key 走环境变量或 `.env`）。
 输出三份产物：比价 Excel（比价总表 / 明细数据 / 统计与异常 / 解析失败原文）、`*.result.json`（完整结构化结果）、`*.report.txt`（人读摘要）。
-
-### 手动安装
-
-```bash
-python3 -m venv .venv
-.venv/bin/pip install -e ".[dev,web,ocr]"
-cd web && npm install
-```
 
 ## 技术架构
 
