@@ -50,12 +50,24 @@
 
 3. **下载压缩包**（不用 git）：在[仓库页](https://github.com/barrysen/quote-comparator)点 **Code → Download ZIP** 解压，或到 [Releases](https://github.com/barrysen/quote-comparator/releases) 下载正式版本源码包后解压进入目录。
 
-### 第二步：一键启动（Web UI，推荐）
+### 第二步：启动（三种方式任选其一）
 
-```bash
-./start.sh          # 首次自动创建虚拟环境、安装依赖、生成模型配置，随后同时拉起前端与后端
-# macOS 也可以直接双击「启动工具.command」
-```
+1. **启动脚本**（推荐，跨平台通用）：
+
+   ```bash
+   ./start.sh
+   ```
+
+   首次运行会自动创建虚拟环境、安装依赖、生成模型配置，随后同时拉起前端与后端。
+
+2. **双击启动**（macOS）：直接双击项目里的「启动工具.command」，效果等同 `./start.sh`。
+
+3. **手动启动**（想分别控制前后端时）：
+
+   ```bash
+   .venv/bin/python -m uvicorn src.web.app:app --port 8321   # 终端 1：仅后端
+   cd web && npx vite                                        # 终端 2：仅前端
+   ```
 
 打开终端提示的地址（默认 http://localhost:3000）：
 
