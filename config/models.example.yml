@@ -10,6 +10,8 @@
 #   api_key     API Key 直接写在这里（本机文件，不会提交）
 #               也可以用 api_key_env 指定环境变量名（如 DEEPSEEK_API_KEY），
 #               由 .env 或环境变量提供；api_key 优先于 api_key_env
+#   temperature 可选，默认 0（防幻觉）。某些端点限制取值（如 Kimi k3 只允许 1），
+#               遇到 invalid temperature 报错时按端点要求填写
 # active 为默认使用的档案；页面上选择其他档案仅对当次提取生效。
 
 active: deepseek
@@ -22,8 +24,10 @@ profiles:
     api_key: ""                      # 填入 sk-... 即可用
 
   # 示例：Kimi（Moonshot）——取消注释并填入 api_key 即可用
+  # 注意：Kimi k3 端点只接受 temperature: 1
   # - name: kimi
   #   label: Kimi K2
   #   base_url: "https://api.moonshot.cn/v1"
   #   model: "kimi-k2-0905-preview"
   #   api_key: ""
+  #   temperature: 1

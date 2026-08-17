@@ -158,6 +158,8 @@ def _run_job(job_id: str, folder: Path, config_path: Path, job_dir: Path, profil
                     "api_key_env": profile["api_key_env"],
                 }
             )
+            if profile.get("temperature") is not None:
+                llm["temperature"] = profile["temperature"]
             cfg["llm"] = llm
             key = _profile_key(profile)
             if key:  # 档案里直写的 api_key 注入进程环境，供 LLM 客户端读取
